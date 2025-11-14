@@ -19,6 +19,10 @@ ingress:
       - vllm.freechat.fun
       secretName: freechat-vllm-tls
 replicaCount: 1
+tolerations:
+  - effect: NoSchedule
+    key: nvidia.com/gpu
+    operator: Exists
 vllm:
   env:
     - name: CUDA_VISIBLE_DEVICES
