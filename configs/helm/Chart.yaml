@@ -4,4 +4,4 @@ appVersion: latest
 description: A Helm chart for vLLM
 name: freechat-vllm
 type: application
-version: 0.11.0
+version: v0.11.0
