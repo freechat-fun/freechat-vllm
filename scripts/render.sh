@@ -6,4 +6,6 @@ check_helm
 
 helm template --kubeconfig ${KUBE_CONFIG} --namespace ${NAMESPACE} --create-namespace -f ${values_yaml} \
   ${ARGS[*]} \
-  ${PROJECT_NAME} ${HELM_CONFIG_HOME}
+  ${PROJECT_NAME} \
+  arktec-quant-helm-charts/vllm \
+  --version ${HELM_version}
