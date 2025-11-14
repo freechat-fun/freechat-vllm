@@ -1,0 +1,27 @@
+annotations:
+  group: fun.freechat
+cert:
+  manager:
+    namespace: cert-manager
+    version: v1.16.1
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: freechat-vllm-letsencrypt-http01
+  className: nginx
+  enabled: false
+  hosts:
+    - host: vllm.freechat.fun
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - hosts:
+      - vllm.freechat.fun
+      secretName: freechat-vllm-tls
+replicaCount: 1
+vllm:
+  env:
+    - name: CUDA_VISIBLE_DEVICES
+      value: "1"
+    - name: VLLM_USE_MODELSCOPE
+      value: "True"
