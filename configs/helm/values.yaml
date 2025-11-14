@@ -26,6 +26,6 @@ tolerations:
 vllm:
   env:
     - name: CUDA_VISIBLE_DEVICES
-      value: "1"
+      value: "all"
     - name: VLLM_USE_MODELSCOPE
       value: "True"
