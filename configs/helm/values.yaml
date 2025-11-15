@@ -23,6 +23,13 @@ tolerations:
   - effect: NoSchedule
     key: nvidia.com/gpu
     operator: Exists
+healthChecks:
+  readiness:
+    path: /health
+    initialDelaySeconds: 5
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 10
 vllm:
   env:
     - name: CUDA_VISIBLE_DEVICES
