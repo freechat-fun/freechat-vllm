@@ -36,3 +36,5 @@ vllm:
       value: "0"
     - name: VLLM_USE_MODELSCOPE
       value: "True"
+    - name: VLLM_USE_FLASHINFER_SAMPLER
+      value: "0"
