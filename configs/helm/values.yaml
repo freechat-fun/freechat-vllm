@@ -30,6 +30,7 @@ healthChecks:
     periodSeconds: 30
     timeoutSeconds: 5
     failureThreshold: 10
+podAnnotations: {}
 vllm:
   env:
     - name: CUDA_VISIBLE_DEVICES
